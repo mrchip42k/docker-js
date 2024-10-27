@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  docker-js:
+    container_name: docker-js
+    hostname: docker-js
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - docker-js-proj-vol:/root/proj
+    ports:
+      - "35373:35373"
+
+volumes:
+  docker-js-proj-vol:
+    external: true
